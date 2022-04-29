@@ -7,9 +7,9 @@ if __name__ == "__main__":
         print("0 arguments.")
     # 1 argument
     elif argc == 1:
-        print(f"1 argument:\n1: {argv[1]}")
+        print(f"1 argument:\n{argc}: {argv[1]}")
     # many arguments
     else:
-        print(f"{argc - 1} arguments:")
-        for i in range(1, argc):
-            print(f"{i}: {argv[i]}")
+        print(f"{argc} arguments:")
+        for i in range(argc):
+            print(f"{i + 1}: {argv[i + 1]}")
