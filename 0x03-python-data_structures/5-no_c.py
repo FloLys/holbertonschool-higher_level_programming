@@ -5,4 +5,4 @@ def no_c(my_string):
         if char == 'c' or char == 'C':
             continue
         dest_string += char
-    return dest_stringi:
+    return dest_string
