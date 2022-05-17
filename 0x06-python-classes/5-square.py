@@ -32,7 +32,6 @@ class Square:
         """prints to stdout square with # symbol"""
         if self.size == 0:
             print()
-        for j in range(self.size):
+        else:
             for i in range(self.size):
-                print('#', end="")
-            print()
+                print('#' * self.size)
