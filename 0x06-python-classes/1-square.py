@@ -1,6 +1,5 @@
 #!/usr/bin/python3
+"""define private size with size"""
 class Square:
-    """class square"""
     def __init__(self, size):
-    """define private size with size"""
         self.__size = size
