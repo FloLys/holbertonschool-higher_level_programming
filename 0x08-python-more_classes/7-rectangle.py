@@ -28,7 +28,8 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         else:
-            return (f"{self.print_symbol*self.width}\n"*self.height).strip('\n')
+            return (f"{self.print_symbol*self.width}\n"*self.height)\
+                         .strip('\n')
 
     def area(self):
         """area: width * height"""
