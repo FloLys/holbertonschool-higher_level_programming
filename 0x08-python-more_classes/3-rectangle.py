@@ -13,7 +13,7 @@ class Rectangle:
     def __str__(self):
         """print rectangle with # """
         if self.width == 0 or self.height == 0:
-            return
+            return ""
         else:
             return (f"{'#'*self.width}\n"*self.height).strip('\n')
 
