@@ -1,0 +1,72 @@
+The ''add_integer'' module
+======================
+
+Using ''add_integer''
+-------------------
+
+Function to sum two given integers or floats as ints
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+  *** Ints ***
+    >>> add_integer(1, 2)
+    3
+
+  *** Negative ***
+    >>> add_integer(5, -2)
+    3
+
+  *** Float ***
+    >>> add_integer(5.345, -2)
+    3
+
+  *** Boolean ***
+    >>> add_integer(2, True)
+    3
+
+  *** Hexadecimal ***
+    >>> add_integer(1, 0x2)
+    3
+
+  *** Zero ***
+    >>> add_integer(0, 0)
+    0
+
+  *** Empty b ***
+    >>> add_integer(0, )
+    98
+
+  *** Wrong variable ***
+    >>> add_integer(3, algo)
+    Traceback (most recent call last):
+        ...
+    NameError: name 'algo' is not defined
+
+  *** Extra arguments ***
+    >>> add_integer(1, 1, 1)
+    Traceback (most recent call last):
+        ...
+    TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+  *** String ***
+    >>> add_integer("asd", 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+  *** Wrong syntax ***
+    >>> add_integer(1, ')
+    Traceback (most recent call last):
+        ...
+    SyntaxError: EOL while scanning string literal
+
+  *** Wrong syntax ***
+    >>> add_integer(,)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
+
+  *** Wrong syntax***
+    >>> add_integer( , 1)
+    Traceback (most recent call last):
+        ...
+    SyntaxError: invalid syntax
