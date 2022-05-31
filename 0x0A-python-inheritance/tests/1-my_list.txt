@@ -30,5 +30,7 @@ Function to print a sorted ascending list
     [-1, 0, 2]
 
     >>> my_list = MyList("anana")
+    >>> my_list
+    ['a', 'n', 'a', 'n', 'a']
     >>> my_list.print_sorted()
     ['a', 'a', 'a', 'n', 'n']

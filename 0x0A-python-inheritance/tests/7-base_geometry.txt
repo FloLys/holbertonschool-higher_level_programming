@@ -30,6 +30,15 @@ Negative
         ...
     ValueError: distance must be greater than 0
 
+Positive
+    >>> bg.integer_validator("name", 3)
+
+Float
+    >>> bg.integer_validator("age", 1.5)
+    Traceback (most recent call last):
+        ...
+    TypeError: age must be an integer
+
 String
     >>> bg.integer_validator("name", "John")
     Traceback (most recent call last):
