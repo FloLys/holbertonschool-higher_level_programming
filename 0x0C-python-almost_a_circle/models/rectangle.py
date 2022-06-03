@@ -25,16 +25,24 @@ class Rectangle(Base):
 #        for i in range(self.__height):
 #            print(' ' * self.__x, end="")
 #            print('#' * self.__width)
-        print(f"{(' ' * self.__x)}{'#' * self.__width}\n"* self.__height, end="")
+        print(f"{(' '*self.__x)}{'#'*self.__width}\n" * self.__height, end="")
 
     def __str__(self):
         """ Print string method """
         return f"[Rectangle] ({self.id}) {self.__x}/{self.__y}\
  - {self.__width}/{self.__height}"
-    
-    def update(self, *args):
-        """ Updates arguments """
 
+    def update(self, *args, **kwargs):
+        """ Updates arguments """
+        attr = ["id", "width", "height", "x", "y"]
+        if args:
+            for i in range(len(args)):
+        # setattr creates or references the attr with the name string given
+        # object.name = self."id" = self.id
+                setattr(self, attr[i], args[i])
+        else:
+            for key in kwargs:
+                setattr(self, key, kwargs[key])
 
     @property
     def width(self):
