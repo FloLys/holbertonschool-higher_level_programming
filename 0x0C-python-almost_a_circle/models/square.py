@@ -3,6 +3,7 @@
 from models.base import Base
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """ Square """
 
@@ -32,12 +33,16 @@ class Square(Rectangle):
         attr = ["id", "size", "x", "y"]
         if args:
             for i in range(len(args)):
-        # setattr creates or references the attr with the name string given
-        # object.name = self."id" = self.id
                 setattr(self, attr[i], args[i])
+# setattr creates or references the attr with the name string given
+# object.name = self."id" = self.id
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """ Returns the dict representation of Square """
+        return {'id': self.id, 'size': self.size, 'x': self.x, 'y': self.y}
 
     @property
     def size(self):
