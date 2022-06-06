@@ -37,12 +37,17 @@ class Rectangle(Base):
         attr = ["id", "width", "height", "x", "y"]
         if args:
             for i in range(len(args)):
-        # setattr creates or references the attr with the name string given
-        # object.name = self."id" = self.id
                 setattr(self, attr[i], args[i])
+# setattr creates or references the attr with the name string given
+# object.name = self."id" = self.id
         else:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
+
+    def to_dictionary(self):
+        """ Returns the dict representation of the Rectangle """
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
 
     @property
     def width(self):
