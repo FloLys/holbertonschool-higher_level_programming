@@ -57,9 +57,5 @@ class Base():
         if cls is None:
             return '[]'
         with open(cls.__name__+'.json', 'r') as f:
-            info = cls.from_json_string(f.read())
-            if cls.__name__ == 'Rectangle':
-                dictionary = {k: v for elem in info for k, v in elem.items()}
-            if cls.__name__ == 'Square':
-                dictionary = {k: v for elem in info for k, v in elem.items()}
-        return cls.create(**dictionary)
+            listinfo = cls.from_json_string(f.read())
+        return [cls.create(**dic) for dic in listinfo]
