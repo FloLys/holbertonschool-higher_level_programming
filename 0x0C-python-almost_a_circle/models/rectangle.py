@@ -34,13 +34,13 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Updates arguments """
-        attr = ["id", "width", "height", "x", "y"]
+        attr = ['id', 'width', 'height', 'x', 'y']
         if args:
             for i in range(len(args)):
                 setattr(self, attr[i], args[i])
 # setattr creates or references the attr with the name string given
 # object.name = self."id" = self.id
-        else:
+        if kwargs:
             for key in kwargs:
                 setattr(self, key, kwargs[key])
 
@@ -66,7 +66,7 @@ class Rectangle(Base):
     @property
     def height(self):
         """ Height Getter """
-        return self.__width
+        return self.__height
 
     @height.setter
     def height(self, value):
