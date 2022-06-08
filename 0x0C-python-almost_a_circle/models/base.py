@@ -55,7 +55,7 @@ class Base():
     def load_from_file(cls):
         """ Returns a list """
         if cls is None:
-            return '[]'
+            return []
         with open(cls.__name__+'.json', 'r') as f:
             listinfo = cls.from_json_string(f.read())
         return [cls.create(**dic) for dic in listinfo]
