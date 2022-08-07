@@ -14,7 +14,7 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(bind=engine)
+    Session = sessionmaker(engine)
     session = Session()
 
     try:
@@ -22,3 +22,5 @@ if __name__ == '__main__':
         print(f"{state.id}: {state.name}")
     except Exception:
         print(Nothing)
+
+    session.close()
