@@ -6,7 +6,7 @@ import MySQLdb
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, Session
 
 if __name__ == '__main__':
     engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
@@ -14,13 +14,10 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Base.metadata.create_all(engine)
 
-    Session = sessionmaker(engine)
-    session = Session()
-
-    try:
+    with Session(engine) as session:
         state = session.query(State).first()
-        print(f"{state.id}: {state.name}")
-    except Exception:
-        print(Nothing)
 
-    session.close()
+        try:
+            print(f"{state.id}: {state.name}")
+        except Exception:
+            print(Nothing)
