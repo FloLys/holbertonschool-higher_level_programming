@@ -2,7 +2,6 @@
 """ Prints the first State obj from database """
 
 
-import MySQLdb
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import (create_engine)
@@ -20,4 +19,4 @@ if __name__ == '__main__':
         try:
             print(f"{state.id}: {state.name}")
         except Exception:
-            print(Nothing)
+            print("Nothing")
