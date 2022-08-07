@@ -2,9 +2,10 @@
 """ Get all states """
 
 
+import MySQLdb
+from sys import argv
+
 if __name__ == '__main__':
-    import MySQLdb
-    from sys import argv
 
     db = MySQLdb.connect(host='localhost', port=3306, user=argv[1],
                          passwd=argv[2], db=argv[3])
@@ -12,8 +13,8 @@ if __name__ == '__main__':
     cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     states = cur.fetchall()
 
-for row in states:
-    print(row)
-cur.close()
-db.close()
-"""print("(%i, '%s')" % cur.fetchone())"""
+    for row in states:
+        print(row)
+
+    cur.close()
+    db.close()
