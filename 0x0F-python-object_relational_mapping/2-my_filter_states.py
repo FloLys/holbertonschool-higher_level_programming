@@ -15,6 +15,5 @@ if __name__ == '__main__':
 
 for row in states:
     print(row)
-"""print("('%s')" % cur.fetchone())"""
 cur.close()
 db.close()

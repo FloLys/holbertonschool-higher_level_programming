@@ -17,4 +17,3 @@ for row in states:
     print(row)
 cur.close()
 db.close()
-"""print("(%i, '%s')" % cur.fetchone())"""
