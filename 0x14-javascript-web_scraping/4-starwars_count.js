@@ -1,4 +1,6 @@
 #!/usr/bin/node
+// prints the number of movies where the character Wedge Antilles is present
+// Wedge Antilles ID = 18
 
 const axios = require('axios');
 let count = 0;
